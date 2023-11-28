@@ -11,3 +11,4 @@ pandas
 altair==4.1.0
 opencv-contrib-python-headless
 streamlit_option_menu
+xlsxwriter
