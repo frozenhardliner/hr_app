@@ -6,8 +6,8 @@ Pillow==8.4.0
 dlib==19.24.2
 numpy==1.19.5
 SQLAlchemy==1.1.9
-openpyxl==3.1.2
-pandas==1.1.5
+openpyxl
+pandas
 altair==4.1.0
 opencv-contrib-python-headless
 streamlit_option_menu
