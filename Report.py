@@ -8,6 +8,8 @@ import io
 # buffer to use for excel writer
 buffer = io.BytesIO()
 def app():
+    if 'report_df' not in st.session_state:
+        st.session_state.report_df = None
     conn = sqlite3.connect("worker_database.db")
     col1, col2, col3 = st.columns(3)
     col4, col5, col6,col7 = st.columns([1,1,2,2])
