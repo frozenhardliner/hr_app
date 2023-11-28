@@ -28,7 +28,7 @@ def app():
             current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             report = generate_report(conn, choosen_date,option_select)
             st.session_statereport_df = pd.DataFrame(report)
-    st.data_editor(st.session_statereport_df)
+    st.data_editor(st.session_state.report_df)
     if st.session_statereport_df is not None:
         if st.button("Download as Excel", type = "primary"):
             current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
