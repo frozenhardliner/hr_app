@@ -8,7 +8,7 @@ import io
 # buffer to use for excel writer
 buffer = io.BytesIO()
 def app():
-    if 'report_df' not in st.session_state:
+    if "report_df" not in st.session_state:
         st.session_state.report_df = None
     conn = sqlite3.connect("worker_database.db")
     col1, col2, col3 = st.columns(3)
@@ -26,11 +26,11 @@ def app():
     if option_select == "Date":
         choosen_date = col4.date_input(":blue[From Date]")
     if st.button("Generate Report"):
-        if choosen_date and st.session_state.report_df is not None:
+        if choosen_date:
             current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             report = generate_report(conn, choosen_date,option_select)
             st.session_state.report_df = pd.DataFrame(report)
-    st.data_editor(st.session_state.report_df)
+    st.dataframe(st.session_state.report_df)
     if st.session_state.report_df is not None:
         if st.button("Download as Excel", type = "primary"):
             current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
