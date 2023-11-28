@@ -27,11 +27,11 @@ def app():
         if choosen_date and st.session_statereport_df is not None:
             current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             report = generate_report(conn, choosen_date,option_select)
-            st.session_statereport_df = pd.DataFrame(report)
+            st.session_state.report_df = pd.DataFrame(report)
     st.data_editor(st.session_state.report_df)
     if st.session_statereport_df is not None:
         if st.button("Download as Excel", type = "primary"):
             current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             filename = f"Report_{current_time}"
-            excel = download_excel(st.session_statereport_df, filename)
+            excel = download_excel(st.session_state.report_df, filename)
             st.markdown(excel, unsafe_allow_html=True) 
