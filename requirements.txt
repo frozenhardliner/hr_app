@@ -1,0 +1,13 @@
+streamlit==1.28.2
+SQLAlchemy==1.1.9
+face-recognition==1.3.0
+face-recognition-models==0.3.0
+Pillow==8.4.0
+dlib==19.24.2
+numpy==1.19.5
+SQLAlchemy==1.1.9
+openpyxl==3.1.2
+pandas==1.1.5
+altair==4.1.0
+opencv-contrib-python-headless
+streamlit_option_menu
